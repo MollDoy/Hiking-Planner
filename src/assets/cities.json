@@ -1,0 +1,236 @@
+{
+  "Irkutsk": {
+    "id": 1,
+    "title": { "ru": "Иркутск", "en": "Irkutsk" },
+    "places": [
+      {
+        "id": 101,
+        "name": { "ru": "Кругобайкальская железная дорога", "en": "Circum-Baikal Railway" },
+        "location": { "ru": "Южный берег Байкала, маршрут КБЖД", "en": "Southern Baikal shore, Circum-Baikal route" },
+        "image": "kbjd.jpg",
+        "description": {
+          "ru": "Маршрут проходит вдоль старой железной дороги, предлагая уникальные виды на Байкал и его окрестности.",
+          "en": "The route runs along the old railway, offering unique views of Lake Baikal and its surroundings."
+        },
+        "length": { "ru": "20 км", "en": "20 km" },
+        "difficulty": { "ru": "Средняя", "en": "Medium" }
+      }
+    ]
+  },
+  "Angarsk": {
+    "id": 2,
+    "title": { "ru": "Ангарск", "en": "Angarsk" },
+    "places": [
+      {
+        "id": 102,
+        "name": { "ru": "Тропа по следу реки Китой", "en": "Kitoy River Trail" },
+        "location": { "ru": "Городской парк", "en": "City Park" },
+        "image": "kitoy.jpg",
+        "description": {
+          "ru": "Пешеходный и велосипедный маршрут вдоль реки Китой, подходящий для прогулок в любое время года.",
+          "en": "A walking and cycling route along the Kitoy River, suitable for year-round walks."
+        },
+        "length": { "ru": "1.5 км", "en": "1.5 km" },
+        "difficulty": { "ru": "Лёгкая", "en": "Easy" }
+      }
+    ]
+  },
+  "Shelekhov": {
+    "id": 3,
+    "title": { "ru": "Шелехов", "en": "Shelekhov" },
+    "places": [
+      {
+        "id": 103,
+        "name": { "ru": "Маршрут 33 Богатыря", "en": "Route of 33 Bogatyrs" },
+        "location": { "ru": "Присаянское плато, река Иркут, Шаманка", "en": "Prisayansk Plateau, Irkut River, Shamanka" },
+        "image": "33_bogatirya.jpg",
+        "description": {
+          "ru": "Популярный маршрут для похода выходного дня, ведущий к Шаманскому утесу — скале около 150 метров высотой на берегу реки Иркут.",
+          "en": "Popular weekend hiking route leading to Shamanka Cliff — a 150-meter high rock on the Irkut River shore."
+        },
+        "length": { "ru": "10 км", "en": "10 km" },
+        "difficulty": { "ru": "Лёгкая", "en": "Easy" }
+      }
+    ]
+  },
+  "Baikalsk": {
+    "id": 4,
+    "title": { "ru": "Байкальск", "en": "Baikalsk" },
+    "places": [
+      {
+        "id": 104,
+        "name": { "ru": "Тёплые Озёра на Снежной", "en": "Warm Lakes on Snezhnaya River" },
+        "location": { "ru": "Южный Байкал", "en": "Southern Baikal" },
+        "image": "teplie_ozera.jpg",
+        "description": {
+          "ru": "Маршрут к тёплым озёрам на реке Снежной, популярное место для отдыха и купания.",
+          "en": "Route to the warm lakes on the Snezhnaya River, a popular spot for relaxation and swimming."
+        },
+        "length": { "ru": "5 км", "en": "5 km" },
+        "difficulty": { "ru": "Лёгкая", "en": "Easy" }
+      },
+      {
+        "id": 105,
+        "name": { "ru": "Маршрут на Чёртов Палец", "en": "Route to Devil's Finger" },
+        "location": { "ru": "Предгорья Хамар-Дабана", "en": "Foothills of Khamar-Daban" },
+        "image": "chertov_finger.jpg",
+        "description": {
+          "ru": "Туристический треккинг на уникальный природный скальник, известный своей необычной формой.",
+          "en": "Tourist trekking to a unique rock formation, famous for its unusual shape."
+        },
+        "length": { "ru": "7 км", "en": "7 km" },
+        "difficulty": { "ru": "Средняя", "en": "Medium" }
+      }
+    ]
+  },
+  "Arshan": {
+    "id": 5,
+    "title": { "ru": "Аршан", "en": "Arshan" },
+    "places": [
+      {
+        "id": 106,
+        "name": { "ru": "Тропа здоровья", "en": "Health Trail" },
+        "location": { "ru": "Саянские горы", "en": "Sayan Mountains" },
+        "image": "kingarga.jpg",
+        "description": {
+          "ru": "Экологическая тропа вдоль реки Кынгарга с каскадом водопадов и оборудованными мостиками.",
+          "en": "Eco trail along the Kyngarga River with waterfall cascades and equipped bridges."
+        },
+        "length": { "ru": "3 км", "en": "3 km" },
+        "difficulty": { "ru": "Лёгкая", "en": "Easy" }
+      },
+      {
+        "id": 107,
+        "name": { "ru": "Пик Любви", "en": "Love Peak" },
+        "location": { "ru": "Восточный Саян", "en": "Eastern Sayan" },
+        "image": "pik_lubvi.jpg",
+        "description": {
+          "ru": "Популярный подъём на обзорную вершину с видом на Тункинскую долину.",
+          "en": "Popular ascent to a viewpoint with views over the Tunkinsky Valley."
+        },
+        "length": { "ru": "8 км", "en": "8 km" },
+        "difficulty": { "ru": "Средняя", "en": "Medium" }
+      }
+    ]
+  },
+  "Slyudyanka": {
+    "id": 6,
+    "title": { "ru": "Слюдянка", "en": "Slyudyanka" },
+    "places": [
+      {
+        "id": 108,
+        "name": { "ru": "Пик Чёрского", "en": "Chersky Peak" },
+        "location": { "ru": "Хамар-Дабан", "en": "Khamar-Daban" },
+        "image": "pik_cherskogo.jpg",
+        "description": {
+          "ru": "Один из самых известных маршрутов Прибайкалья — восхождение на пик Чёрского (2090 м).",
+          "en": "One of the most famous routes in the Baikal region — ascent to Chersky Peak (2090 m)."
+        },
+        "length": { "ru": "28 км", "en": "28 km" },
+        "difficulty": { "ru": "Высокая", "en": "High" }
+      },
+      {
+        "id": 109,
+        "name": { "ru": "Гора Соболиная", "en": "Sable Mountain" },
+        "location": { "ru": "Близ Слюдянки", "en": "Near Slyudyanka" },
+        "image": "sobolinaya_gora.jpg",
+        "description": {
+          "ru": "Подъём на гору Соболиная, откуда открывается панорама на Байкал и окрестные хребты.",
+          "en": "Ascent to Sable Mountain, offering panoramic views of Lake Baikal and nearby ridges."
+        },
+        "length": { "ru": "12 км", "en": "12 km" },
+        "difficulty": { "ru": "Средняя", "en": "Medium" }
+      }
+    ]
+  },
+  "Listvyanka": {
+    "id": 7,
+    "title": { "ru": "Листвянка", "en": "Listvyanka" },
+    "places": [
+      {
+        "id": 110,
+        "name": { "ru": "Большая Байкальская тропа", "en": "Big Baikal Trail" },
+        "location": { "ru": "Южный берег Байкала", "en": "Southern Baikal shore" },
+        "image": "baikalskaya_bigtrail.jpg",
+        "description": {
+          "ru": "Живописная тропа вдоль Байкала через леса и скалы к посёлку Большие Коты.",
+          "en": "Scenic trail along Lake Baikal through forests and rocks to the village of Bolshiye Koty."
+        },
+        "length": { "ru": "24 км", "en": "24 km" },
+        "difficulty": { "ru": "Средняя", "en": "Medium" }
+      },
+      {
+        "id": 111,
+        "name": { "ru": "Камень Черского", "en": "Chersky Rock" },
+        "location": { "ru": "Листвянка", "en": "Listvyanka" },
+        "image": "cherskiy_rock.jpg",
+        "description": {
+          "ru": "Небольшая тропа к смотровой площадке с видом на Байкал и исток Ангары.",
+          "en": "Short trail to a viewpoint overlooking Lake Baikal and the source of the Angara River."
+        },
+        "length": { "ru": "2 км", "en": "2 km" },
+        "difficulty": { "ru": "Лёгкая", "en": "Easy" }
+      }
+    ]
+  },
+  "UlanUde": {
+    "id": 8,
+    "title": { "ru": "Улан-Удэ", "en": "Ulan-Ude" },
+    "places": [
+      {
+        "id": 112,
+        "name": { "ru": "Эко-тропа к Верхней Берёзовке", "en": "Eco-trail to Verkhnyaya Berezovka" },
+        "location": { "ru": "Пригород Улан-Удэ", "en": "Suburbs of Ulan-Ude" },
+        "image": "eko-tropa-verh-berez.jpg",
+        "description": {
+          "ru": "Прогулочный маршрут через лес к этнографическому музею народов Забайкалья.",
+          "en": "A walking route through the forest to the Ethnographic Museum of the peoples of Transbaikalia."
+        },
+        "length": { "ru": "5 км", "en": "5 km" },
+        "difficulty": { "ru": "Лёгкая", "en": "Easy" }
+      },
+      {
+        "id": 113,
+        "name": { "ru": "Иволгинский дацан", "en": "Ivolginsky Datsan" },
+        "location": { "ru": "Иволгинский район, 30 км от Улан-Удэ", "en": "Ivolginsky District, 30 km from Ulan-Ude" },
+        "image": "ivolginskiy_datsan.jpg",
+        "description": {
+          "ru": "Пешеходная тропа и паломнический маршрут к главному буддийскому храму России.",
+          "en": "Pedestrian trail and pilgrimage route to the main Buddhist temple in Russia."
+        },
+        "length": { "ru": "3 км", "en": "3 km" },
+        "difficulty": { "ru": "Лёгкая", "en": "Easy" }
+      }
+    ]
+  },
+  "Tunka": {
+    "id": 9,
+    "title": { "ru": "Тунка", "en": "Tunka" },
+    "places": [
+      {
+        "id": 114,
+        "name": { "ru": "Хойморский водопад", "en": "Khoimor Waterfall" },
+        "location": { "ru": "Тункинская долина, Бурятия", "en": "Tunkinsky Valley, Buryatia" },
+        "image": "hoimor_waterfall.jpg",
+        "description": {
+          "ru": "Красивый маршрут к каскаду водопадов в Тункинской долине.",
+          "en": "Beautiful route to the cascade of waterfalls in the Tunkinsky Valley."
+        },
+        "length": { "ru": "4 км", "en": "4 km" },
+        "difficulty": { "ru": "Лёгкая", "en": "Easy" }
+      },
+      {
+        "id": 115,
+        "name": { "ru": "Гора Мунку-Сардык", "en": "Munku-Sardyk Mountain" },
+        "location": { "ru": "Восточный Саян, Тункинский район", "en": "Eastern Sayan, Tunkinsky District" },
+        "image": "munka_sardik_mountain.jpg",
+        "description": {
+          "ru": "Высочайшая вершина Восточного Саяна (3491 м). Популярный маршрут для опытных альпинистов.",
+          "en": "The highest peak of the Eastern Sayan (3491 m). Popular route for experienced climbers."
+        },
+        "length": { "ru": "40 км", "en": "40 km" },
+        "difficulty": { "ru": "Очень сложная", "en": "Very Hard" }
+      }
+    ]
+  }
+}
