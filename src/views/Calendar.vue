@@ -23,15 +23,6 @@
         </vue-cal>
 
         <v-dialog v-model="showEventDialog" max-width="400px">
-            <!-- <v-card v-if="selectedEvent">
-                <v-card-title style="text-align: center;">{{ selectedEvent.title }}</v-card-title>
-                <v-card-text>
-                    <p>Начало похода: {{ formattedDate(selectedEvent.start) }}</p> 
-                    <p>Конец похода: {{ formattedDate(selectedEvent.end) }}</p>
-                    <br />
-                    Туристов: {{ selectedEvent.tourists }} <v-icon small>mdi-account</v-icon>
-                    <p v-if="selectedEvent.participate" style="color: green"> Вы записаны на этот поход! </p>
-                </v-card-text> -->
                 <HikingPlaceCard
                 v-if="placeOfSelectedEvent"
                 :place="placeOfSelectedEvent">
@@ -62,7 +53,7 @@
 </template>
 
 <script>
-import { mapState, mapActions } from "vuex";
+import { mapState } from "vuex";
 import VueCal from "Vue-cal"
 import "vue-cal/dist/vuecal.css"
 
@@ -76,22 +67,54 @@ export default {
             selectedEvent: null,
             showEventDialog: false,
             placeOfSelectedEvent: null,
-            cities
+
+            cities,
+            placesMap: this.createPlacesMap(cities)
         }
     },
     methods: {
-        ...mapActions(["subscribe"]),
+        createPlacesMap(cities) { // (Оптимизация) - заранее один раз создаём объект Map с коллекцией "ключ (id места)" -> "значение (место)"
+            const map = new Map();           
+            for (const city of Object.values(cities)) {  
+                for (const place of city.places) {     
+                    map.set(place.id, place);
+                }
+            }
+            return map;
+        },
         onEventClick (eventId) {
             this.selectedEvent = this.events.find(e => e.id === eventId);
 
-            for (const city of Object.values(cities)) {
+            /*for (const city of Object.values(cities)) {
                 const foundPlace = city.places.find(p => p.id === this.selectedEvent.placeId);
                 if (foundPlace) {
                     this.placeOfSelectedEvent = foundPlace;
                     break;
                 }
-            }
+            }*/
+            this.placeOfSelectedEvent = this.placesMap.get(this.selectedEvent.placeId) // (Оптимизация) - достаём место по id в уже заготовленной коллекции
             this.showEventDialog = true;
+        },
+        subscribe(eventId) {
+            const eventToSubscribe = this.events.find(e => e.id === eventId);
+
+            const startDate = new Date(eventToSubscribe.start);
+            const endDate = new Date(eventToSubscribe.end);
+
+            // Поиск других ивентов на это время
+            const hasConflictEvent = this.events.some(ev => {
+                if (!ev.participate || ev.id === eventId) return false; 
+                const evStart = new Date(ev.start);
+                const evEnd = new Date(ev.end);
+                return startDate < evEnd && endDate > evStart;
+            });
+
+            if (hasConflictEvent) {
+                alert(this.$t("conflictEvent"));
+                return;
+            }
+
+            this.$store.dispatch("subscribe", eventId);
         },
         unsubscribe(eventId) {
             this.$store.dispatch("unsubscribe", eventId)
@@ -108,18 +131,19 @@ export default {
         ...mapState(["events"]),
         calendarEvents() {
             return this.events.map(e => {
-                let placeName = '';
+                /*let placeName = '';
                 for (const city of Object.values(cities)) {
                     const place = city.places.find(p => p.id === e.placeId);
                     if (place) {
                         placeName = place.name[this.$i18n.locale];
                         break;
                     }
-                }
+                }*/
+                const place = this.placesMap.get(e.placeId); // (Оптимизация) - достаём место по id в уже заготовленной коллекции
                 return {
                     start: e.start,
                     end: e.end,
-                    placeName,
+                    placeName: place.name[this.$i18n.locale],
 
                     tourists: e.tourists,
                     id: e.id,
@@ -127,7 +151,10 @@ export default {
                 }
             })
         },
-    }
+    },
+    created() {
+        this.$store.dispatch("cleanupEvents");
+    },
 };
 </script>
 

@@ -70,15 +70,45 @@ export default {
             if (!this.show) {
                 this.show = true;
             } else {
-                if (!this.start || !this.end) return;
+                if (!this.start || !this.end) {
+                    alert(this.$t("emptyFields"));
+                    return;
+                };
+
+                const startDate = new Date(this.start);
+                const endDate = new Date(this.end);
+                const now = new Date();
+
+                if (startDate < now || endDate < now || endDate <= startDate) {
+                    alert(this.$t("invalidDate"));
+                    return;
+                }
+                // Доп. проверка: от двух часов до двух суток
+                if (endDate - startDate < 2 * 60 * 60 * 1000 || endDate - startDate > 48 * 60 * 60 * 1000) {
+                    alert(this.$t("tooShortOrLongEvent"));
+                    return;
+                }
+
+                const hasConflictEvent = this.$store.state.events.some(ev => {
+                    if (!ev.participate) return false;
+
+                    return (
+                        (startDate < ev.end && endDate > ev.start)
+                    );
+                });
+                if (hasConflictEvent) {
+                    alert(this.$t("conflictEvent"));
+                    return;
+                }
+
                 this.addEvent({
                     //id: this.eventId++,
                     //title: name,
                     placeId,
                     tourists: 1,
                     participate: true,
-                    start: new Date(this.start),
-                    end: new Date(this.end),
+                    start: startDate,
+                    end: endDate,
                 });
                 this.start = null;
                 this.end = null;

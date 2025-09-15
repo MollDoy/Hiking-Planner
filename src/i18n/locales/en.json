@@ -1,5 +1,5 @@
 {
-    "hike_planner": "Hike Planner",
+    "hike_planner": "Hiking Planner",
     "welcome": "Welcome! This application allows tourists to find interesting trails near cities and plan hikes. You can browse routes and register for hikes through the calendar.",
     "trails_near_city": "Trails near the city",
     "trails_description": "Browse available routes and learn more about them.",
@@ -25,6 +25,12 @@
     "tryInputOrSelect": "Try entering a city above or select from the list to see possible trails nearby!",
     "selectCityButton": "Select city",
     "cityNotFound": "City not found, please try to choose it from the list",
+
+    "emptyFields": "Please fill in both fields.",
+    "conflictEvent": "You already have a hike planned for this time - check your calendar",
+    "invalidDate": "An invalid date has been entered. Please, try again.",
+    "tooShortOrLongEvent": "The hike should last at least two hours and no more than two days. Please, try again",
+
 
     "tourists": "Tourists",
     "registered": "You are registered for this hike!",

@@ -1,68 +1,71 @@
 <template>
-  <v-container fluid>
-    <v-row>
-        <!-- <v-col cols="2" style="min-width: 140px">
-            <v-list>
-                <v-list-item
-                v-for="city in cities"
-                :key="city.id"
-                @click="selectCity(city)">
-                    <v-list-item-title style="text-align: center;">{{ city.title }}</v-list-item-title>
-                </v-list-item>
-            </v-list>
-        </v-col> -->
-        <v-col xl="1" lg="2" sm="12">
-            <v-menu transition="slide-y-transition">
-                <template v-slot:activator="{ props }">
-                    <v-btn v-bind="props" block>
-                        {{ citySelected ? citySelected.title[$i18n.locale] : $t("chooseCity") }}
-                    </v-btn>
-                </template>
-                <v-list>
-                    <v-list-item v-for="city in cities" :key="city.id" @click="selectCity(city)" style="text-align: center;">
-                        <v-list-item-title> {{ city.title[$i18n.locale] }}</v-list-item-title>
-                    </v-list-item>
-                </v-list>
-            </v-menu>
-        </v-col>
-        <v-col xl="3" offset-xl="3" lg="3" offset-lg="2" sm="9" offset-sm="0">
-            <v-text-field 
-            :label="$t('enterCity')" 
-            v-model="enterCity" 
-            v-on:keyup.enter="selectCity(enterCity)" 
-            hide-details="auto"
-            :error-messages="cityError ? $t('cityNotFound') : ''"></v-text-field>
-        </v-col>
-        <v-col xl="1" lg="1" sm="3">
-            <v-btn v-on:click="selectCity(enterCity)" block min-height="58px"> {{ $t("enter") }} </v-btn>
-        </v-col>
-    </v-row>
-    <v-row>
-        <v-col xl="8" offset-xl="2" lg="8" offset-lg="2" md="9" offset-md="1" sm="10" offset-sm="0">
-            <v-row justify="center">
-                <v-col 
-                v-if="citySelected" 
-                v-for="place in citySelected.places" 
-                :key="place.id" 
-                sm="12" 
-                offset-sm="2" 
-                md="6" 
-                offset-md="0" 
-                lg="4" 
-                offset-lg="0"
-                xl="3"
-                offset-xl="0">
-                    <HikingPlaceCard v-bind:place="place" />
-                </v-col>
-                <v-col v-else xl="6" offset-xl="0" lg="6" offset-lg="0" sm="12" offset-sm="2">
-                    <v-card variant="outlined" class="pa-4" style="text-align: center;">
-                        <h3> {{ $t("nothingSelected") }}</h3> <br />
-                        <p> {{ $t("tryInputOrSelect") }}</p>
-                    </v-card>
-                </v-col>
-            </v-row>
-        </v-col>
-    </v-row>
+    <v-container fluid>
+        <v-row class="mb-4" align="center">
+            <v-col 
+            cols="12"
+            xl="1" 
+            lg="2" 
+            md="12"
+            sm="12"
+            xs="12">
+                <v-menu transition="slide-y-transition">
+                    <template v-slot:activator="{ props }">
+                        <v-btn v-bind="props" block>
+                            {{ citySelected ? citySelected.title[$i18n.locale] : $t("chooseCity") }}
+                        </v-btn>
+                    </template>
+                    <v-list>
+                        <v-list-item v-for="city in cities" :key="city.id" @click="selectCity(city)" style="text-align: center;">
+                            <v-list-item-title> {{ city.title[$i18n.locale] }}</v-list-item-title>
+                        </v-list-item>
+                    </v-list>
+                </v-menu>
+            </v-col>
+            <v-col 
+            cols="12"
+            xl="3" offset-xl="3" 
+            lg="3" offset-lg="2" 
+            md="9"
+            sm="10"
+            xs="10">
+                <v-text-field 
+                :label="$t('enterCity')" 
+                v-model="enterCity" 
+                v-on:keyup.enter="selectCity(enterCity)" 
+                hide-details="auto"
+                :error-messages="cityError ? $t('cityNotFound') : ''" />
+            </v-col>
+            <v-col 
+            cols="12"
+            xl="1" 
+            lg="1" 
+            md="3"
+            sm="2"
+            xs="2">
+                <v-btn v-on:click="selectCity(enterCity)" min-height="58px" block> {{ $t("enter") }} </v-btn>
+            </v-col>
+        </v-row>
+    
+        <v-row justify="center">
+            <v-col 
+            v-if="citySelected" 
+            v-for="place in citySelected.places" 
+            :key="place.id" 
+            cols="12"
+            xs="12"
+            sm="6" 
+            md="4" 
+            lg="3" 
+            xl="2">
+                <HikingPlaceCard v-bind:place="place" />
+            </v-col>
+            <v-col v-else xl="6" lg="6" sm="12">
+                <v-card variant="outlined" class="pa-4" style="text-align: center;">
+                    <h3> {{ $t("nothingSelected") }}</h3> <br />
+                    <p> {{ $t("tryInputOrSelect") }}</p>
+                </v-card>
+            </v-col>
+        </v-row>
   </v-container>
 </template>
 
